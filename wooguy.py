@@ -13,3 +13,8 @@ duration = data_rows / rate
 data = data[:, 0] # left channel
 #data = data[:, 1] # right channel
 
+# Plot the magnitude of the FFT
+fft = fftpack.fft(data)
+freqs = fftpack.fftfreq(data.size)
+
+plt.plot(freqs, fft)
